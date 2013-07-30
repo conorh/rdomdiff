@@ -11,19 +11,20 @@ Notes:
 * For my usage I wanted to ignore comment/script/cdata/br and nodes that have display: none; specified as an inline style.
 
 == Example usage:
-  require 'open-uri'
 
-  page1 = open("http://somepage").read
-  page2 = open("http://somepage").read
+    require 'open-uri'
 
-  doc1 = Nokogiri::HTML(page1)
-  doc2 = Nokogiri::HTML(page2)
+    page1 = open("http://somepage").read
+    page2 = open("http://somepage").read
 
-  changes = DiffDom.unordered_diff(tree1, tree2)
-  changes.each do |change|
-     puts change[0] # + or - to denote added or removed
-     puts change[1].to_html # The DOM section that was added or removed
-  end
+    doc1 = Nokogiri::HTML(page1)
+    doc2 = Nokogiri::HTML(page2)
+
+    changes = DiffDom.unordered_diff(tree1, tree2)
+    changes.each do |change|
+       puts change[0] # + or - to denote added or removed
+       puts change[1].to_html # The DOM section that was added or removed
+    end
 
 == Credits
 
