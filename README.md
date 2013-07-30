@@ -17,8 +17,8 @@ Notes:
     page1 = open("http://somepage").read
     page2 = open("http://somepage").read
 
-    doc1 = Nokogiri::HTML(page1)
-    doc2 = Nokogiri::HTML(page2)
+    tree1 = Nokogiri::HTML(page1)
+    tree2 = Nokogiri::HTML(page2)
 
     changes = DiffDom.unordered_diff(tree1, tree2)
     changes.each do |change|
